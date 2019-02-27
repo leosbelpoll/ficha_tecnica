@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bienvenido a Despieces{% block title %}{% endblock %}</title>
+    {{ encore_entry_link_tags('css/bootstrap') }}
+    {# {{ encore_entry_link_tags('css/jquery-dataTables') }} #}
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css" />
+    {# {{ encore_entry_link_tags('css/bootstrap-dataTables') }} #}
+    {{ encore_entry_link_tags('css/base') }}
+    {{ encore_entry_link_tags('css/uploadfile') }}
+    {{ encore_entry_link_tags('css/jQueryFileTree') }}
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}{% endblock %}
+    {# {{ encore_entry_script_tags('js/jquery') }} #}
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    {{ encore_entry_script_tags('js/bootstrap') }}
+    {# {{ encore_entry_script_tags('js/jquery-dataTables') }} #}
+    <script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+    {{ encore_entry_script_tags('js/bootstrap-dataTables') }}
+    {{ encore_entry_script_tags('js/jquery-form') }}
+    {{ encore_entry_script_tags('js/jquery-uploadfile') }}
+    {{ encore_entry_script_tags('js/jquery-easing') }}
+    {{ encore_entry_script_tags('js/jQueryFileTree') }}
+{% block javascripts %}{% endblock %}
+</body>
 </html>

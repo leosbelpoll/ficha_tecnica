@@ -1,0 +1,56 @@
+.contenedor{margin: 20px;}
+.select-style{width: 225px!important; height: 30px!important; margin: 10px 0 0 10px}
+.input-grande{margin: 10px 0 0 10px; width: 500px!important; height: 30px}
+.input-date{margin: 10px 0 0 10px; width: 100px!important; height: 30px}
+.label-date{margin: 5px 0 0 10px; height: 30px; padding-top: 5px}
+.but{margin: 0px 5px 0 5px;}
+.nuevo{margin-left: 30px!important;}
+.pagar{position: absolute; right: 200px; top: 5px;}
+.cabezones{margin-top: 30px }
+.porciento{padding: 15px 0 0 10px; display: inline; float: right;}
+.InputFileSube{display: inline; margin: 7px 0 0 0}
+.navbar-header{width: 100%}
+.form-control{width: 50%; margin-bottom: 10px}
+.label-first{font-size: 20px}
+.select-table{position: absolute; top: 5px; right: 5px; width: 250px;}
+label{font-weight: 500 !important;}
+.modal-body{min-height: 60px;}
+.idiomas{position: relative; top: -65px; right: 15px}
+.tab-pane{margin-top: 20px;}
+.modal-lg{width: 90%}
+#myModal .ajax-file-upload-statusbar{width: 100%!important; height: 60px;}
+.ajax-file-upload-progress{margin: 0px !important; width: 170px !important;}
+.ajax-file-upload-green{background-color: #337ab7 !important; border-color: #2e6da4; color: #fff; margin-left: 10px!important; margin-bottom: 15px!important;}
+.ajax-file-upload-red{margin-bottom: 15px!important;}
+.ajax-file-upload-abort{margin-left: 50px!important;}
+.ajax-file-upload-green:hover {color: #fff; background-color: #286090; border-color: #204d74;}
+.ajax-file-upload-preview{width: 50px; float: left; height: 50px; margin-right: 5px;}
+.ajax-file-upload-filename{display: inline; float: left; padding-top: 15px; margin: 0 0px 5px 0px!important;}
+.extrahtml{padding-top: 15px;}
+.extrahtml .col-md-5{width: 35%}
+.ajax-file-upload-filename{width: 340px!important;}
+#myModal .ajax-file-upload-container { margin: 40px 0px 20px 0px!important; }
+#imagenes-body img{width: 250px; height: 175px; margin: 15px}
+#taller-body img, #usuario-body img, #catalogo-body img, #video-body img{display: block; width: 100px; margin: 15px auto}
+#esquema-body img, #despiece-body img{width: 200px; height: 150px; display: block; margin: 15px auto}
+.alinia{text-align: center}
+.danger{color: red }
+.success{color: green}
+.close{color: red; font-size: 25px; margin-left: 5px}
+#myTableEntrados_length, #myTableCobrar_length, #myTableCobrados_length, #myTableFinalizar_length, #myTableArchivos_length{position: absolute; right: 10px; top: -40px; }
+#myTableEntrados_filter, #myTableCobrar_filter, #myTableCobrados_filter, #myTableFinalizar_filter, #myTableArchivos_filter{ position: absolute; right: 80px; top: -40px; }
+.tab-pane { margin-top: 0px !important;}
+.cerrar{position: absolute; right: 20px; top: 5px; }
+#hoja{margin: 10px}
+#contenedor-hoja .ajax-file-upload-container { margin: 20px 0px 20px 0px !important;}
+#contenedor-hoja .ajax-file-upload-statusbar{width: 720px!important; height: 60px}
+#contenedor-hoja .ajax-file-upload-green, #contenedor-hoja .ajax-file-upload-red{margin-top: 10px}
+#alinia-suma{position: absolute; top: 15px; right: 325px;}
+.cuentame .form-control{width: 70%;}
+.pinta{background-color: #d1d1d1; color: #333; height: 30px}
+.col-sm-7{padding-left: 0px;}
+.panel-heading{min-height: 60px}
+.panel-title a{color: #000000}
+.separa{margin-top: 10px!important;}
+.presentation{margin: 10px}
+.presentation > span{padding: 5px}

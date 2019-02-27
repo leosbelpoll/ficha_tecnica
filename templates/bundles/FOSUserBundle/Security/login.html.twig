@@ -1,0 +1,24 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error|trans({}, 'FOSUserBundle') }}</div>
+        {% endif %}
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <h2 class="form-signin-heading">Entrar a Despieces</h2>
+        <label for="username" class="sr-only">Email o Username</label>
+        <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" placeholder="Email o Username" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on"> Recuérdame
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit">Entrar</button>
+    </form>
+{% endblock fos_user_content %}
