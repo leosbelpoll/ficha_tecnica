@@ -30,18 +30,30 @@ class DefaultController extends AbstractController
         
 
         $spanish = new Ficha();
+        $spanish->setIdioma('Spanish');
         $english = new Ficha();
+        $english->setIdioma('English');
         $frances = new Ficha();
+        $frances->setIdioma('Frances');
         $italiano = new Ficha();
+        $italiano->setIdioma('Italiano');
         $aleman = new Ficha();
+        $aleman->setIdioma('Aleman');
         $portugues = new Ficha();
+        $portugues->setIdioma('Portugues');
 
         $spanish2 = new Fcoches();
+        $spanish2->setIdioma('Spanish');
         $english2 = new Fcoches();
+        $english2->setIdioma('English');
         $frances2 = new Fcoches();
+        $frances2->setIdioma('Frances');
         $italiano2 = new Fcoches();
+        $italiano2->setIdioma('Italiano');
         $aleman2 = new Fcoches();
+        $aleman2->setIdioma('Aleman');
         $portugues2 = new Fcoches();
+        $portugues2->setIdioma('Portugues');
 
         $entity_add->addFicha($spanish);
         $entity_add->addFicha($english);
@@ -57,14 +69,15 @@ class DefaultController extends AbstractController
         $entity_add->addFcoch($aleman2);
         $entity_add->addFcoch($portugues2);
 
-        $form_add = $this->createForm(VehiculoType::class, $entity_add);
+        $form_add = $this->createForm(VehiculoType::class, $entity_add, [
+            'method' => 'POST',
+        ]);
 
         $archivos = $this->archivosAction();
 
         if($request->getMethod() == 'POST'){
             $form_add->handleRequest($request);
             if($form_add->isValid()){
-                
                 $entity_add->setUsuario($user);
                 $entity_add->setEstado('new');
                 $entity_add->setCreacion(new \DateTime('now') );
@@ -74,7 +87,7 @@ class DefaultController extends AbstractController
                     $this->get('session')->getFlashBag()->add('danger',
                         'El año inicial no puede ser mayor al año final.');
 
-                    return $this->render('default/index.html.twig', array('form' => $form_add->createView(), 'users' => $users, 'vehiculos' => $vehiculos));
+                        return $this->render('default/index.html.twig', array('form' => $form_add->createView(), 'users' => $users, 'vehiculos' => $vehiculos, 'archivos' => $archivos));
                 }}
 
                 $spanish->setVehiculo($entity_add);
@@ -91,9 +104,12 @@ class DefaultController extends AbstractController
                 $aleman2->setVehiculo($entity_add);
                 $portugues2->setVehiculo($entity_add);
 
-                    foreach($entity_add->getFiles() as $files){
-                        $files->setVehiculo($entity_add);
-                    }
+                foreach($entity_add->getFiles() as $files){
+                    $files->setVehiculo($entity_add);
+                }
+
+                
+
                 $em->persist($spanish);
                 $em->persist($english);
                 $em->persist($frances);
@@ -108,10 +124,15 @@ class DefaultController extends AbstractController
                 $em->persist($aleman2);
                 $em->persist($portugues2);
 
-                $em->persist($entity_add);
-                dump($entity_add);
-                die;
-                $em->flush();
+                try {
+                    $em->persist($entity_add);
+                    $em->flush();
+                } catch (\Exception $e) {
+                    $this->get('session')->getFlashBag()->add('danger',
+                        'Ha ocurrido el siguiente error tratando de guardar en la base de datos:    ' . $e->getMessage());
+
+                        return $this->render('default/index.html.twig', array('form' => $form_add->createView(), 'users' => $users, 'vehiculos' => $vehiculos, 'archivos' => $archivos));
+                }
 
                 $this->get('session')->getFlashBag()->add('success',
                     'Su vehiculo se ha agregado correctamente. Gracias por usar nuestros servicios.');
