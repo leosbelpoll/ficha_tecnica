@@ -56,7 +56,7 @@ if( file_exists($postDir) ) {
 				if( is_dir($postDir . $file) && (!$onlyFiles || $onlyFolders) )
 					echo "<li class='directory collapsed'>{$checkbox}<a rel='" .$htmlRel. "/'>" . $htmlName . "</a></li>";
 				else if (!$onlyFolders || $onlyFiles)
-					echo "<li class='file ext_{$ext}'>{$checkbox}<a rel='" . $htmlRel . "'>" . $htmlName . "</a></li>";
+					echo "<li class='file ext_{$ext}' style=\"display:inline; margin: 10px\"><img src='" . $htmlRel . "' height='70px' style=\"display:block\" onerror=\"this.style.display='none'\">{$checkbox}<a rel='" . $htmlRel . "'>" . $htmlName . "</a></li>";
 			}
 		}
 

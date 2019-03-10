@@ -5329,13 +5329,13 @@
             });
             Rinput();
         {% endif %}
+        console.log()
         velarcoche();
         $('#vehiculo_clase').on('change', function (e) {
             velarcoche();
         });
         function velarcoche() {
             var clase = $('#vehiculo_clase option:selected').text();
-            //            console.log(clase);
             if (clase === 'Coche') {
                 var hoja = $('#vehiculo_hoja').val();
                 //                console.log(hoja);

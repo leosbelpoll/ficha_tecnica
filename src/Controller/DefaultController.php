@@ -136,6 +136,7 @@ class DefaultController extends AbstractController
 
                 $this->get('session')->getFlashBag()->add('success',
                     'Su vehiculo se ha agregado correctamente. Gracias por usar nuestros servicios.');
+                return $this->redirectToRoute('homepage');
             }
         }
 
