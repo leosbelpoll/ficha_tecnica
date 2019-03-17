@@ -171,6 +171,7 @@ class DefaultController extends AbstractController
             if($form_add->isValid()){
 
                 $vehiculo->setCreacion(new \DateTime('now') );
+                $vehiculo->setEstado('edited');
 
                 if($vehiculo->getFechaFin() != null){
                     if($vehiculo->getFechaInicio() > $vehiculo->getFechaFin()){
